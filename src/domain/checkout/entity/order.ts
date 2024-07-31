@@ -46,4 +46,10 @@ export default class Order {
   total(): number {
     return this._items.reduce((acc, item) => acc + item.total(), 0);
   }
+
+  changeItems(items: OrderItem[]) {
+    this._items = items;
+    this.total();
+    this.validate();
+  }
 }
